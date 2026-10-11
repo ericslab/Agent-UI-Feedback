@@ -1,5 +1,6 @@
 {
   "name": "agent-ui-feedback",
+  "repository": "github:ericslab/Agent-UI-Feedback",
   "version": "0.1.0",
   "description": "Click and comment on a running web app. Notes are queued in fixes.json for Claude Code or Codex to implement with /fixes.",
   "license": "MIT",

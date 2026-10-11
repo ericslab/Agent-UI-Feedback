@@ -1,4 +1,4 @@
-# agent-ui-feedback
+# Agent-UI-Feedback
 
 Click and comment on your running web app. Claude Code or Codex implements the notes.
 
@@ -12,12 +12,21 @@ Turn the tool on, click the text on the page, rewrite it in place, add a comment
 
 The edit stays visible on the page, highlighted, until it is implemented. Links and buttons keep working on a plain click; Alt+click edits their text.
 
-## Setup
+## Install with your agent
+
+Paste this into Claude Code or Codex in your project:
+
+```
+Install Agent-UI-Feedback into this site: https://github.com/ericslab/Agent-UI-Feedback
+Run `npx github:ericslab/Agent-UI-Feedback install` in the project root, add `<script src="http://localhost:4777/fixes.js"></script>` to the app so it loads in development only, add `fixes.json` to .gitignore, and add an npm script "feedback": "agent-ui-feedback" with the package as a dev dependency ("github:ericslab/Agent-UI-Feedback"). Then tell me how to start it.
+```
+
+## Setup by hand
 
 1. Start the notes server in your project folder:
 
 ```sh
-npx github:ericslab/agent-ui-feedback
+npx github:ericslab/Agent-UI-Feedback
 ```
 
    It runs on port 4777 and writes notes to `./fixes.json`. Use `--port` and `--file` to change either.
@@ -45,7 +54,7 @@ npx github:ericslab/agent-ui-feedback
 3. Install the skill into your project:
 
 ```sh
-npx github:ericslab/agent-ui-feedback install
+npx github:ericslab/Agent-UI-Feedback install
 ```
 
    This copies `skills/fixes` to `.claude/skills/fixes` (Claude Code) and `.agents/skills/fixes` (Codex).
