@@ -1,4 +1,4 @@
-# fixes
+# agent-ui-feedback
 
 Click and comment on your running web app. Claude Code or Codex implements the notes.
 
@@ -17,7 +17,7 @@ The edit stays visible on the page, highlighted, until it is implemented. Links 
 1. Start the notes server in your project folder:
 
 ```sh
-npx github:ericotten/fixes
+npx github:ericslab/agent-ui-feedback
 ```
 
    It runs on port 4777 and writes notes to `./fixes.json`. Use `--port` and `--file` to change either.
@@ -45,10 +45,12 @@ npx github:ericotten/fixes
 3. Install the skill into your project:
 
 ```sh
-npx github:ericotten/fixes install
+npx github:ericslab/agent-ui-feedback install
 ```
 
    This copies `skills/fixes` to `.claude/skills/fixes` (Claude Code) and `.agents/skills/fixes` (Codex).
+
+   The command is `/fixes`. If that is too generic for your project (another skill or command already uses the name), rename the copied folder and the `name:` line at the top of its `SKILL.md`, for example to `ui-feedback`, and invoke that instead.
 
 ## Use
 
@@ -92,6 +94,6 @@ The skill reads every pending note, finds the string in the source (message file
 - `src/server.js`, `src/store.js`: the local notes server and the JSON queue. No dependencies.
 - `widget/fixes.js`: the browser widget, plain JavaScript in a shadow root so your app's CSS and the widget's do not touch.
 - `skills/fixes/SKILL.md`: the skill, the same file for Claude Code and Codex.
-- `example/index.html`: a page to try it on (`npx fixes` in one terminal, `python3 -m http.server 4778` in `example/` in another).
+- `example/index.html`: a page to try it on (`npx agent-ui-feedback` in one terminal, `python3 -m http.server 4778` in `example/` in another).
 
 Tests: `npm test`.
